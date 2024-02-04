@@ -92,54 +92,23 @@ export default function Home() {
   };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "50px",
-          height: "100px",
-        }}
-      >
+    <div className="h-screen w-full">
+      <div className="h-[100px] flex items-center justify-center space-x-10">
         <button onClick={() => setBtnFormat("Incoder")}>Incoder</button>
         <button onClick={() => setBtnFormat("Decoder")}>Decoder</button>
       </div>
 
       {btnFormat && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "20px",
-            margin: "100px 0",
-          }}
-        >
+        <div className="flex items-center justify-center space-x-10 mt-[100px]">
           <input
+            className="w-[500px] rounded-[10px] p-[10px] text-black"
             type="text"
             onChange={(e) => setValueInput(e.target.value)}
-            style={{
-              width: "500px",
-              borderRadius: "10px",
-              padding: "10px",
-              color: "#111",
-            }}
           />
           <button
+            className="rounded-[10px] p-[10px] text-black bg-white"
             type="submit"
             onClick={btnFormat === "Incoder" ? incodeFormat : decoderFormat}
-            style={{
-              borderRadius: "10px",
-              padding: "10px",
-              color: "#111",
-              backgroundColor: "#fff",
-            }}
           >
             Transformar
           </button>
@@ -148,15 +117,9 @@ export default function Home() {
 
       {responseDecoderAndIncoder.length > 0 && (
         <div
-          style={{
-            height: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="h-auto flex flex-col items-center justify-center space-x-10 mt-[100px]"
         >
-          <h1>Resposta</h1>
+          <h1>Resultado : </h1>
           <p>{responseDecoderAndIncoder}</p>
         </div>
       )}
