@@ -99,9 +99,9 @@ export default function Home() {
       </div>
 
       {btnFormat && (
-        <div className="flex items-center justify-center space-x-10 mt-[100px]">
+        <div className="flex max-[600px]:flex-col items-center justify-center space-x-10 max-[600px]:space-y-10 max-[600px]:space-x-0 mt-[100px]  max-[600px]:px-[10px]">
           <input
-            className="w-[500px] rounded-[10px] p-[10px] text-black"
+            className="w-[500px] max-[600px]:w-full rounded-[10px] p-[10px] text-black"
             type="text"
             onChange={(e) => setValueInput(e.target.value)}
           />
@@ -116,9 +116,7 @@ export default function Home() {
       )}
 
       {responseDecoderAndIncoder.length > 0 && (
-        <div
-          className="h-auto flex flex-col items-center justify-center space-x-10 mt-[100px]"
-        >
+        <div className="h-auto flex flex-col items-center justify-center space-x-10 max-[600px]:space-x-0 mt-[100px]">
           <h1>Resultado : </h1>
           <p>{responseDecoderAndIncoder}</p>
         </div>
